@@ -2,7 +2,7 @@
   "name": "impressao",
   "productName": "impressao",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Programa de impressão de pedidos",
   "main": ".vite/build/main.js",
   "scripts": {
     "start": "electron-forge start",
@@ -23,9 +23,12 @@
     "@electron/fuses": "^1.8.0",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
+    "autoprefixer": "^10.4.20",
     "electron": "31.3.1",
     "eslint": "^8.0.1",
     "eslint-plugin-import": "^2.25.0",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.9",
     "ts-node": "^10.0.0",
     "typescript": "~4.5.4",
     "vite": "^5.0.12"
@@ -37,6 +40,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "electron-pos-printer": "^1.3.7",
     "electron-squirrel-startup": "^1.0.1"
   }
 }

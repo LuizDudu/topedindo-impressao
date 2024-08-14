@@ -1,13 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
+    <title>Sistema de impressão</title>
+</head>
+<body
+    class="grid grid-cols-[4rem_1fr] grid-rows-[1fr_2rem] min-h-screen">
+<nav class="bg-blue-300 row-span-2">
+    <ul class="min-h-screen flex flex-col items-center justify-center p-2">
+        <li class=""><a href="#"><img src="/icons/home-icon.svg" alt="Home"></a></li>
+        <li class="mt-auto"><a href="#"><img src="/icons/settings-icon.svg" alt="Settings"></a></li>
+    </ul>
+</nav>
+<main class="bg-purple-200 flex flex-col items-center justify-center p-2 gap-4 overflow-y-auto">
+    <h1 class="text-2xl">Seja bem vindo ao sistema de impressão</h1>
+    <p>Digite o código de verificação abaixo para iniciar a impressão.</p>
 
-  </head>
-  <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
-    <script type="module" src="/src/renderer.ts"></script>
-  </body>
+    <form class="flex flex-col items-center justify-center gap-2">
+        <label for="codigo" class="sr-only"></label>
+        <input type="text" id="codigo" placeholder="Código de verificação"
+               class="w-full rounded-md border-2 border-gray-300 p-2">
+        <button class="rounded-md bg-blue-500 px-4 py-2 text-white">Adicionar</button>
+    </form>
+
+    <section class="w-full flex justify-center gap-2 overflow-y-auto max-h-48 mt-10">
+        <table class="border-2 border-black rounded-2xl w-2/3">
+            <thead class="bg-black text-white">
+            <tr class="text-center">
+                <th>Codigo</th>
+                <th>Acoes</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="text-center">
+                <td class="border-2 border-black">112321</td>
+                <td class="border-2 border-black">Deletar</td>
+            </tr>
+            <tr class="text-center">
+                <td class="border-2 border-black">112321</td>
+                <td class="border-2 border-black">Deletar</td>
+            </tr>
+            <tr class="text-center">
+                <td class="border-2 border-black">112321</td>
+                <td class="border-2 border-black">Deletar</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+<footer class="bg-gray-200 min-w-full flex justify-between items-center gap-2 p-4">
+    <p class="text-sm font-bold text-purple-600"><a href="https://topedindo.app/" target="_blank">topedindo</a></p>
+    <span id="version" class="text-sm font-bold"></span>
+</footer>
+<script type="module" src="/src/renderer.ts"></script>
+</body>
 </html>

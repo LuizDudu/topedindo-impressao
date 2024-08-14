@@ -29,3 +29,8 @@
 import './index.css';
 
 console.log('👋 This message is being logged by "renderer.ts", included via Vite');
+
+document.addEventListener('DOMContentLoaded', async() => {
+    const version = document.querySelector('#version');
+    version.innerHTML = await window.currentVersion.currentVersion();
+});
