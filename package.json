@@ -1,7 +1,7 @@
 {
   "name": "impressao",
-  "productName": "impressao",
-  "version": "1.0.0",
+  "productName": "Impressão topedindo",
+  "version": "0.1.0",
   "description": "Programa de impressão de pedidos",
   "main": ".vite/build/main.js",
   "scripts": {
@@ -11,6 +11,7 @@
     "publish": "electron-forge publish",
     "lint": "eslint --ext .ts,.tsx ."
   },
+  "repository": "https://github.com/LuizDudu/topedindo-impressao",
   "devDependencies": {
     "@electron-forge/cli": "^7.4.0",
     "@electron-forge/maker-deb": "^7.4.0",
@@ -20,29 +21,37 @@
     "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
     "@electron-forge/plugin-fuses": "^7.4.0",
     "@electron-forge/plugin-vite": "^7.4.0",
+    "@electron-forge/publisher-github": "^7.4.0",
     "@electron/fuses": "^1.8.0",
+    "@types/escpos": "^2.5.5",
+    "@types/node-jose": "^1.1.13",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "autoprefixer": "^10.4.20",
     "electron": "31.3.1",
     "eslint": "^8.0.1",
     "eslint-plugin-import": "^2.25.0",
+    "node": "^20",
     "postcss": "^8.4.41",
     "tailwindcss": "^3.4.9",
     "ts-node": "^10.0.0",
     "typescript": "~4.5.4",
-    "vite": "^5.0.12",
-    "node": "^20",
-    "yarn": "^1.0"
+    "vite": "^5.0.12"
   },
   "keywords": [],
   "author": {
     "name": "Luiz Eduardo Souza",
     "email": "lesluizeduardo0@gmail.com"
   },
-  "license": "MIT",
   "dependencies": {
-    "electron-pos-printer": "^1.3.7",
-    "electron-squirrel-startup": "^1.0.1"
+    "@plick/electron-pos-printer": "^1.3.0",
+    "electron-pos-printer": "1.3.6",
+    "electron-squirrel-startup": "^1.0.1",
+    "escpos": "^2.5.2",
+    "jose": "^5.8.0",
+    "jwt-decode": "^4.0.0",
+    "node-jose": "^2.2.0",
+    "socket.io-client": "^4.7.5",
+    "update-electron-app": "^3.0.0"
   }
 }

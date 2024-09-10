@@ -1,55 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="br">
 <head>
     <meta charset="UTF-8" />
     <title>Sistema de impressão</title>
 </head>
 <body
-    class="grid grid-cols-[4rem_1fr] grid-rows-[1fr_2rem] min-h-screen">
-<nav class="bg-blue-300 row-span-2">
-    <ul class="min-h-screen flex flex-col items-center justify-center p-2">
-        <li class=""><a href="#"><img src="/icons/home-icon.svg" alt="Home"></a></li>
-        <li class="mt-auto"><a href="#"><img src="/icons/settings-icon.svg" alt="Settings"></a></li>
-    </ul>
-</nav>
-<main class="bg-purple-200 flex flex-col items-center justify-center p-2 gap-4 overflow-y-auto">
+    class="bg-purple-300 grid grid-cols-[1fr] grid-rows-[1fr_2rem] min-h-screen">
+<main class="flex flex-col items-center justify-center p-2 gap-4 overflow-y-auto">
     <h1 class="text-2xl">Seja bem vindo ao sistema de impressão</h1>
     <p>Digite o código de verificação abaixo para iniciar a impressão.</p>
 
-    <form class="flex flex-col items-center justify-center gap-2">
-        <label for="codigo" class="sr-only"></label>
-        <input type="text" id="codigo" placeholder="Código de verificação"
+    <form id="addNewToken" class="flex flex-col items-center justify-center gap-2 w-1/3">
+        <label for="token" class="sr-only"></label>
+        <input type="password" name="token" id="token" placeholder="Token de verificação"
                class="w-full rounded-md border-2 border-gray-300 p-2">
         <button class="rounded-md bg-blue-500 px-4 py-2 text-white">Adicionar</button>
     </form>
 
     <section class="w-full flex justify-center gap-2 overflow-y-auto max-h-48 mt-10">
-        <table class="border-2 border-black rounded-2xl w-2/3">
+        <table id="tokensTable" class="border-2 border-black rounded-2xl w-2/3">
             <thead class="bg-black text-white">
             <tr class="text-center">
-                <th>Codigo</th>
-                <th>Acoes</th>
+                <th>Apelido</th>
+                <th>Código</th>
+                <th>Ações</th>
             </tr>
             </thead>
             <tbody>
-            <tr class="text-center">
-                <td class="border-2 border-black">112321</td>
-                <td class="border-2 border-black">Deletar</td>
-            </tr>
-            <tr class="text-center">
-                <td class="border-2 border-black">112321</td>
-                <td class="border-2 border-black">Deletar</td>
-            </tr>
-            <tr class="text-center">
-                <td class="border-2 border-black">112321</td>
-                <td class="border-2 border-black">Deletar</td>
-            </tr>
+            <template id="templateTrToken">
+                <tr class="text-center">
+                    <td class="nickname border-2 border-black">TESTING</td>
+                    <td class="token border-2 border-black">**************</td>
+                    <td class="actions border-2 border-black h-10">
+                        <button class="removeToken p-2 rounded bg-red-500 text-white" data-id="">Deletar</button>
+                    </td>
+                </tr>
+            </template>
             </tbody>
         </table>
     </section>
 </main>
 <footer class="bg-gray-200 min-w-full flex justify-between items-center gap-2 p-4">
-    <p class="text-sm font-bold text-purple-600"><a href="https://topedindo.app/" target="_blank">topedindo</a></p>
+<!--    <p class="text-sm font-bold text-purple-600"><a href="https://topedindo.app/" target="_blank">topedindo</a></p>-->
+        <p class="text-sm font-bold text-purple-600">topedindo</p>
     <span id="version" class="text-sm font-bold"></span>
 </footer>
 <script type="module" src="/src/renderer.ts"></script>
