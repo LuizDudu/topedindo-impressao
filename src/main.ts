@@ -7,7 +7,6 @@ import TokenService from './main/token-service/token-service';
 import { IPCHandlerResponse } from './main/types/ipc-handler-response';
 import { updateElectronApp } from 'update-electron-app';
 
-
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
     app.quit();
@@ -100,10 +99,7 @@ app.whenReady().then(async () => {
         app.quit();
     }
 
-    updateElectronApp({
-        notifyUser: true,
-    });
-
+    updateElectronApp();
     wsManager = new WebSocketManager();
     tokenService = new TokenService();
     const tokens = tokenService.getTokens();

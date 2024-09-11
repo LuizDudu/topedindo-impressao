@@ -20,7 +20,6 @@ const config: ForgeConfig = {
             name: 'topedindo-impressao',
             setupIcon: path.join(__dirname, 'public', 'icons', 'topedindo-icon.ico'),
             skipUpdateIcon: true,
-            authors: 'topedindo',
         }),
         new MakerZIP({}, ['darwin']),
         new MakerRpm({}),
@@ -29,10 +28,13 @@ const config: ForgeConfig = {
     publishers: [
         new PublisherGithub({
             prerelease: true,
+            authToken: process.env.GITHUB_ACCESS_TOKEN,
             repository: {
                 name: 'topedindo-impressao',
                 owner: 'LuizDudu',
             },
+            draft: false,
+            generateReleaseNotes: true,
         }),
     ],
     plugins: [
