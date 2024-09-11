@@ -19,6 +19,7 @@ let wsManager: WebSocketManager = null;
 const createMainWindow = async () => {
     // Create the browser window.
     if (mainWindow && !mainWindow.isDestroyed()) {
+        mainWindow.show();
         return;
     }
 
@@ -110,6 +111,7 @@ app.whenReady().then(async () => {
     } else {
         dialog.showMessageBox(null, {
             type: 'info',
+            icon: path.join(__dirname, 'icons', 'topedindo-icon.ico'),
             message: 'Aplicativo abriu na bandeja do sistema',
         });
 

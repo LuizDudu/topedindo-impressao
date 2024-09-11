@@ -11,8 +11,8 @@ export default class WebSocketManager {
 
     constructor() {
         WebSocketManager.wsServer = {
-            ssl: false,
-            url: 'localhost:3000',
+            ssl: true,
+            url: 'api.topedin.do',
             namespace: 'impressoes',
         };
 
