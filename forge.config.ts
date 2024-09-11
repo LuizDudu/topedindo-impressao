@@ -28,7 +28,6 @@ const config: ForgeConfig = {
     publishers: [
         new PublisherGithub({
             prerelease: true,
-            authToken: process.env.GITHUB_ACCESS_TOKEN,
             repository: {
                 name: 'topedindo-impressao',
                 owner: 'LuizDudu',
