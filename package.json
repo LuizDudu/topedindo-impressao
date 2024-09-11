@@ -1,7 +1,7 @@
 {
   "name": "impressao",
   "productName": "Impressão topedindo",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "description": "Programa de impressão de pedidos",
   "main": ".vite/build/main.js",
   "scripts": {
